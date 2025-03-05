@@ -6,6 +6,7 @@ interface IUser extends Document {
   profileImage: string;
   language: string;
   streak: number;
+  lastUpdatedDate: Date | null;
   quizMarks: number;
 }
 
@@ -31,6 +32,10 @@ const userSchema = new Schema<IUser>(
     streak: {
       type: Number,
       default: 0,
+    },
+    lastUpdatedDate: {
+      type: Date,
+      default: null,
     },
     quizMarks: {
       type: Number,

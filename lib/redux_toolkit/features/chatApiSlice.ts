@@ -6,8 +6,6 @@ export const ChatApiSlice = createApi({
   endpoints: (builder) => ({
     prompt: builder.mutation({
       query: (prompt) => {
-        console.log(prompt);
-        
         return {
           url: "api/chat/",
           method:"POST",
@@ -18,7 +16,22 @@ export const ChatApiSlice = createApi({
         };
       },
     }),
+
+    userId: builder.mutation({
+      
+      
+      query: (id) => {
+        console.log(id);
+        return {
+          url: `api/streak/?id=${id}`,
+          method:"POST",
+          headers: {
+            "content-Type": "application/json",
+          },
+        }
+      }
+    })
   }),
 });
 
-export const { usePromptMutation } = ChatApiSlice;
+export const { usePromptMutation,useUserIdMutation } = ChatApiSlice;
