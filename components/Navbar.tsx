@@ -3,6 +3,7 @@ import GoogleButton from "./GoogleButton";
 import { Mic } from "lucide-react";
 import { auth, signOut } from "@/lib/auth";
 import Image from "next/image";
+import Link from "next/link";
 const Navbar = async () => {
   const session = await auth();
   const user = session?.user;
@@ -11,7 +12,9 @@ const Navbar = async () => {
   return (
     <nav>
       <div className="w-full py-4 flex justify-between items-center px-8">
-        <Mic size={30} />
+        <Link href='/dashboard'>
+        
+        <Mic size={30} /></Link>
         <div>
           {user ? (<div className="flex justify-center items-center gap-4">
             <form action={async() => {

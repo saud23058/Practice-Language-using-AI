@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased inset-0 bg-[linear-gradient(60deg,#8EC5FC_0%,#E0C3FC_100%)] `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased inset-0  bg-[linear-gradient(60deg,#8EC5FC_0%,#E0C3FC_100%)] `}
       >
       <Navbar/>
         <ReduxApiProvider>
