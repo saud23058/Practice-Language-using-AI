@@ -4,7 +4,7 @@ import { DBconnection } from "./db"
 import { UserModel } from "@/model/user";
 
  
-export const { handlers, signIn, signOut, auth } = NextAuth({
+export const { handlers, signIn, signOut,auth } = NextAuth({
   providers: [Google({
     clientId: process.env.AUTH_GOOGLE_ID,
     clientSecret:process.env.AUTH_GOOGLE_SECRET
