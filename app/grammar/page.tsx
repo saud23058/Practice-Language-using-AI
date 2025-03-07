@@ -4,6 +4,7 @@ const Grammar = async () => {
   const userId = (await userSession()) || "";
 
   return (
+    
     <>
       <LanguageGrammar userId={userId} />
     </>

@@ -1,5 +1,5 @@
 import NewWord from "@/components/NewWord";
-import PreviousQuiz from "@/components/PreviousQuiz";
+import Language from "@/components/Language";
 import Streak from "@/components/Streak";
 import { userSession } from "@/lib/userSession";
 import Link from "next/link";
@@ -27,7 +27,7 @@ const Dashboard = async () => {
           <Streak userId={userId} />
         </Suspense>
         <Suspense fallback="Fetching data...">
-        <PreviousQuiz />
+        <Language userId={userId} />
         </Suspense>
        
       </div>
@@ -43,9 +43,9 @@ const Dashboard = async () => {
             Text & Voice Chat with AI
           </button>
         </Link>
-        <Link href="/quiz">
+        <Link href="/objects-names">
           <button className="bg-black py-2 px-4 text-white rounded-md hover:bg-gray-700 font-bold">
-            Quiz
+          Real world objects
           </button>
         </Link>
         <Link href="/conversation">

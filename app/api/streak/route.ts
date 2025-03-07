@@ -13,6 +13,7 @@ export async function POST(req: NextRequest) {
     }
 
     const user = await UserModel.findById(id);
+    const language = user.language;
     if (!user) {
       return NextResponse.json({ message: "User not found" }, { status: 404 });
     }
@@ -44,7 +45,7 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json(
-      { message: "Streak updated", streak: updateStreak },
+      { message: "Streak updated", streak: updateStreak,language },
       { status: 200 }
     );
   } catch (error) {

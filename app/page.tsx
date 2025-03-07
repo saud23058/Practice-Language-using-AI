@@ -1,17 +1,17 @@
+import GoogleButton from "@/components/GoogleButton";
 import Preview from "@/components/Preview";
-import { auth } from "@/lib/auth";
+import { userSession } from "@/lib/userSession";
+
 import { redirect } from "next/navigation";
 import React from "react";
 
 const Home = async () => {
-  const session = await auth();
-
-  const user = session?.user;
+  
+  const user =await userSession();
   if (user) redirect("/dashboard")
  
-
   return (
-    <main className="w-full flex flex-col items-center mt-12 gap-3">
+    <main className="w-full flex flex-col items-center mt-5 gap-3">
       <h1 className="text-4xl font-bold text-black">
         Welcome to language Practice Platform{" "}
         <span className="bg-linear-to-r from-black to-blue-400 bg-clip-text text-transparent">
@@ -23,6 +23,7 @@ const Home = async () => {
         conversations, vocabulary building, grammar tips, and progress tracking!
         🚀
       </p>
+      <GoogleButton title="Get started and Continue with google"/>
       <Preview />
     </main>
   );

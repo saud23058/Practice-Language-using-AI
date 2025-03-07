@@ -33,7 +33,7 @@ const Navbar = async () => {
             />
             </div>
           ) : (
-            <GoogleButton />
+            <GoogleButton title="Continue with Google" />
           )}
         </div>
       </div>

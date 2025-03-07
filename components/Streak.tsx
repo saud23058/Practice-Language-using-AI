@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Flame } from "lucide-react"; // Fire Icon
+import { Flame } from "lucide-react"; 
 import { useUserIdMutation } from "@/lib/redux_toolkit/features/chatApiSlice";
 
 interface Props {

@@ -2,10 +2,10 @@
 import { signIn } from "@/lib/auth";
 import React from "react";
 
-const GoogleButton =  () => {
+const GoogleButton =  ({title}:{title:string}) => {
   const handler = async () => {
     "use server";
-    await signIn("google");
+    await signIn("google",{redirectTo:'/dashboard'});
   };
 
   return (
@@ -14,7 +14,8 @@ const GoogleButton =  () => {
         className="bg-black py-2 text-white px-4 rounded-md hover:bg-gray-700 cursor-pointer  font-bold"
         type="submit"
       >
-        Continue with Google
+        {title}
+        
       </button>
     </form>
   );

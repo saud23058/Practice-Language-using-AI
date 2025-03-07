@@ -44,6 +44,18 @@ export const ChatApiSlice = createApi({
       },
     }),
 
+    Objects: builder.mutation({
+      query: (id) => {
+        return {
+          url: `api/objects-names/?id=${id}`,
+          method: "POST",
+          headers: {
+            "content-Type": "application/json",
+          },
+        };
+      },
+    }),
+
     grammar: builder.mutation({
      
       query: ({ language, id }: { language: string; id: string }) => {
@@ -60,4 +72,4 @@ export const ChatApiSlice = createApi({
   }),
 });
 
-export const { usePromptMutation, useUserIdMutation,useGrammarMutation,useNewWordMutation } = ChatApiSlice;
+export const { usePromptMutation, useUserIdMutation,useGrammarMutation,useNewWordMutation,useObjectsMutation } = ChatApiSlice;
